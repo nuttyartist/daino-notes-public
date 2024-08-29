@@ -7,6 +7,8 @@ Website: https://www.get-notes.com
 
 ## Screenshot
 
+![this_is_a_line_daino_notes](https://github.com/user-attachments/assets/fa95848d-db07-4bcd-b082-a526a9d9da94)
+
 ## Is Daino Notes Open Source?
 
 No, Daino Notes is not open source. It is based on my previous note-taking app [Notes](https://github.com/nuttyartist/notes), which is fully open source.
