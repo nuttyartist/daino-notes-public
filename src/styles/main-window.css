@@ -1,0 +1,255 @@
+QMainWindow.light,
+QMainWindow#MainWindow.light,
+QFrame#frame.light,
+QFrame#frameMiddle.light,
+QWidget#centralWidget.light,
+QWidget#verticalSpacer_upSearchEdit.light,
+QWidget#verticalSpacer_upSearchEdit2.light,
+QWidget#verticalSpacer_upTreeView.light,
+QFrame#frameRightTop.light,
+QFrame#frameRight.light,
+QListView#tagListView.light {
+  background-color: rgb(255,255,255);
+}
+
+QFrame#frameLeft.light,
+QFrame#frameLeft.sepia
+{
+    background-color: rgb(237, 237, 237);
+}
+
+QMainWindow.dark,
+QMainWindow#MainWindow.dark,
+QFrame#frame.dark,
+QFrame#frameMiddle.dark,
+QWidget#centralWidget.dark,
+QWidget#verticalSpacer_upSearchEdit.dark,
+QWidget#verticalSpacer_upSearchEdit2.dark,
+QWidget#verticalSpacer_upTreeView.dark,
+QFrame#frameRightTop.dark,
+QFrame#frameRight.dark,
+QListView#tagListView.dark{
+  background-color: rgb(25, 25, 25);
+}
+
+QFrame#frameLeft.dark {
+background-color: rgb(51,51,51);
+}
+
+QMainWindow.sepia,
+QMainWindow#MainWindow.sepia,
+QFrame#frame.sepia,
+QFrame#frameMiddle.sepia,
+QWidget#centralWidget.sepia,
+QWidget#verticalSpacer_upSearchEdit.sepia,
+QWidget#verticalSpacer_upSearchEdit2.sepia,
+QWidget#verticalSpacer_upTreeView.sepia,
+QFrame#frameRightTop.sepia,
+QFrame#frameRight.sepia,
+QListView#tagListView.sepia{
+  background-color: rgb(251, 240, 217);
+}
+
+QFrame#frameRight,
+QFrame#frameRightTop {
+  border: none;
+}
+
+/* Label showing the name of the selected folder */
+QLabel#listviewLabel1.light {
+  color: rgb(68, 68, 68);
+}
+
+QLabel#listviewLabel1.dark {
+  color: rgb(255, 255, 255);
+}
+
+QLabel#listviewLabel1.sepia {
+  color: rgb(68, 68, 68);
+}
+
+/* Label showing the amount of notes in the selected folder/tags */
+QLabel#listviewLabel2 {
+  color: rgb(132, 132, 132);
+}
+
+/* Search bar */
+QLineEdit#searchEdit {
+  padding-left: 21px;
+  padding-right: 19px;
+  border: 1px solid rgb(205, 205, 205);
+  border-radius: 5px;
+  selection-background-color: rgb(61, 155, 218);
+}
+
+QLineEdit#searchEdit.light {
+  background-color: rgb(255,255,255);
+  color: rgb(26, 26, 26);
+  border: 1px solid rgb(205, 205, 205);
+}
+
+QLineEdit#searchEdit.dark {
+  background-color: rgb(42, 42, 42);
+  color: rgb(207, 207, 207);
+  border: 1px solid rgb(42, 42, 42);
+}
+
+QLineEdit#searchEdit.sepia {
+  background-color: rgb(251, 240, 217);
+  color: rgb(50, 30, 3);
+  border: 1px solid rgb(205, 205, 205);
+}
+
+QLineEdit#searchEdit.dark:focus {
+  border: 2px solid rgb(44, 83, 111);
+}
+
+QLineEdit#searchEdit.light:focus {
+  border: 2px solid rgb(166, 198, 228);
+}
+
+/* The two vertical lines that seperate 3 MainWindow frames */
+QMainWindow.light,
+QFrame#verticalSplitterLine_left.light {
+  border: 1px solid rgb(237, 237, 237);
+}
+QFrame#verticalSplitterLine_middle.light {
+  border: 1px solid rgb(217, 217, 217);
+/*  border: 1px solid rgb(191, 191, 191);*/
+}
+QMainWindow.dark,
+QFrame#verticalSplitterLine_left.dark {
+    border: 1px solid rgb(51,51,51);
+}
+
+QFrame#verticalSplitterLine_middle.dark {
+  border: 1px solid rgb(54, 55, 57);
+}
+QMainWindow.sepia,
+QFrame#verticalSplitterLine_left.sepia,
+QFrame#verticalSplitterLine_middle.sepia {
+  border: 1px solid rgb(191, 191, 191);
+}
+
+/* Main menu */
+QMenu.menu {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #c7c7c7;
+}
+
+QMenu::item:selected {
+  background: 1px solid rgb(48, 140, 198);
+}
+
+/* Buttons */
+/* The button inside of the search bar */
+/*QLineEdit#searchEdit QToolButton,*/
+/* The + button to create a new note */
+/*QPushButton#newNoteButton,*/
+/* The 3 dots button */
+/*QPushButton#dotsButton,*/
+/* The global settings button */
+/*QPushButton#globalSettingsButton,*/
+/* The button to toggle the tree view */
+/*QPushButton#toggleTreeViewButton,*/
+/*QPushButton#switchToTextViewButton,*/
+/* The Aa button to open the style editor */
+/*QPushButton {
+  border: none;
+  padding: 0px;
+  outline: none;
+}*/
+
+QLineEdit#searchEdit QToolButton,
+QPushButton#globalSettingsButton,
+QPushButton#toggleTreeViewButton,
+QPushButton#newNoteButton
+{
+  border: none;
+  outline: none;
+}
+
+QPushButton#globalSettingsButton.dark,
+QPushButton#toggleTreeViewButton.dark,
+QPushButton#newNoteButton.dark
+{
+/*    color: rgb(223, 224, 224);*/
+    color: rgb(162, 163, 164);
+}
+
+QPushButton#globalSettingsButton.light,
+QPushButton#toggleTreeViewButton.light,
+QPushButton#newNoteButton.light
+{
+/*    color: rgb(26, 26, 26);*/
+/*    color: rgb(114, 114, 114); Apple's default color for the light mode */
+      color: rgb(100, 100, 100);
+}
+
+QPushButton#globalSettingsButton.sepia,
+QPushButton#toggleTreeViewButton.sepia,
+QPushButton#newNoteButton.sepia
+{
+      color: rgb(100, 100, 100);
+}
+
+QPushButton#toggleTreeViewButton.dark:hover,
+QPushButton#newNoteButton.dark:hover {
+    border-radius: 5px;
+    background-color: rgb(49, 49, 49);
+}
+
+QPushButton#toggleTreeViewButton.light:hover,
+QPushButton#newNoteButton.light:hover {
+    border-radius: 5px;
+    background-color: rgb(239, 239, 239);
+}
+
+QPushButton#toggleTreeViewButton.sepia:hover,
+QPushButton#newNoteButton.sepia:hover {
+    border-radius: 5px;
+    background-color: rgb(241, 231, 210);
+}
+
+QPushButton#toggleTreeViewButton.dark:pressed,
+QPushButton#newNoteButton.dark:pressed {
+    background-color: rgb(44, 44, 44);
+}
+
+QPushButton#toggleTreeViewButton.light:pressed,
+QPushButton#newNoteButton.light:pressed {
+    background-color: rgb(223, 223, 222);
+}
+
+QPushButton#toggleTreeViewButton.sepia:pressed,
+QPushButton#newNoteButton.sepia:pressed {
+    background-color: rgb(223, 213, 192);
+}
+
+/* ------------------------ */
+
+QPushButton#globalSettingsButton.dark:hover
+{
+    border-radius: 5px;
+    background-color: rgb(65, 65, 65);
+}
+
+QPushButton#globalSettingsButton.light:hover,
+QPushButton#globalSettingsButton.sepia:hover
+{
+    border-radius: 5px;
+    background-color: rgb(223, 223, 223);
+}
+
+QPushButton#globalSettingsButton.dark:pressed
+{
+    background-color: rgb(61, 61, 61);
+}
+
+QPushButton#globalSettingsButton.light:pressed,
+QPushButton#globalSettingsButton.sepia:pressed
+{
+    background-color: rgb(207, 207, 207);
+}
+
+

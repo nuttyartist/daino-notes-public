@@ -1,0 +1,11 @@
+QListView.light {
+  background-color: rgb(255,255,255);
+}
+
+QListView.dark {
+  background-color: rgb(25, 25, 25);
+}
+
+QListView.sepia {
+  background-color: rgb(251, 240, 217);
+}

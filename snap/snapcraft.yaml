@@ -1,0 +1,152 @@
+# Observations:
+#
+# - This package is expected to work normally, like any other packaging format (e.g. Flatpak, AppImage).
+# - Native Wayland support, albeit doable, is currently not done on purpose, for a few reasons:
+#
+# 1. It's currently awkward to package/configure properly:
+#  - Due to 'strict' confinement, we have create a wrapper script and configure the Wayland socket to be visible in $XDG_RUNTIME_DIR: 
+#    - https://forum.snapcraft.io/t/wayland-dconf-and-xdg-runtime-dir/186
+#    - https://github.com/MirServer/graphics-core22/issues/6#issuecomment-1558815412
+#
+# 2. It currently has some UI inconsistencies (these were tested on Ubuntu 22.04 with GNOME 42):
+#  - The mouse cursor theme is chosen incorrectly
+#  - The mouse cursor itself is way larger than normal
+#  - Modal windows don't have their initial position on the screen set correctly
+#  - Windows don't have shadows
+#
+# I'm sure these issues can be worked around somehow, but since the 'X11 build' works reasonably well on Wayland through XWayland,
+# they can be dealt with some other time.
+# But if you're interested in Wayland support right now, here's what you have to do to get an initial, working build:
+#
+# - Add the 'qt6-wayland-dev' package to 'build-packages'
+# - Add the 'qt6-wayland' package to 'stage-packages'
+# - Either add a Wayland launcher script (mentioned in reason number 1), OR run the app like this (for quick testing):
+#   $ snap run --shell daino-notes
+#   $ export XDG_RUNTIME_DIR=(dirname "$XDG_RUNTIME_DIR")
+#   $ export QT_QPA_PLATFORM=wayland
+#   $ daino-notes
+#
+# Useful links:
+# - https://snapcraft.io/docs/snapcraft-yaml-reference
+# - https://github.com/MirServer/iot-example-graphical-snap/tree/Qt6-example
+name: daino-notes
+adopt-info: daino-notes
+icon: packaging/linux/common/icons/512x512/notes.png
+
+base: core22
+compression: lzo
+confinement: strict
+
+# The s390x architecture is not included on purpose, because it currently fails at the graphics-core22 step.
+architectures:
+  - build-on: amd64
+  - build-on: arm64
+  - build-on: armhf
+  - build-on: ppc64el
+
+apps:
+  daino-notes:
+    common-id: io.github.nuttyartist.daino-notes
+    command-chain:
+      - bin/graphics-core22-wrapper # https://mir-server.io/docs/the-graphics-core22-snap-interface
+    command: usr/bin/daino-notes
+    plugs: # https://snapcraft.io/docs/supported-interfaces
+      - desktop
+      - desktop-legacy
+      - gsettings
+      - home
+      - network
+      - opengl
+      - unity7
+      - x11
+      - wayland
+    environment:
+      QML2_IMPORT_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt6/qml
+      QT_PLUGIN_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt6/plugins
+      QT_QPA_PLATFORM_PLUGIN_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt6/plugins/platforms
+      XCURSOR_PATH: $SNAP/share/icons # Fixes missing mouse cursor theme in X11 sessions - assuming the current theme exists in the gtk-common-themes snap.
+      XDG_CACHE_HOME: $SNAP_USER_COMMON/.cache
+      XDG_CONFIG_HOME: $SNAP_USER_DATA/.config
+      XDG_CONFIG_DIRS: $SNAP/etc/xdg
+      XKB_CONFIG_ROOT: $SNAP/usr/share/X11/xkb
+
+layout:
+  /usr/share/libdrm:
+    bind: $SNAP/graphics/libdrm
+  /usr/share/drirc.d:
+    symlink: $SNAP/graphics/drirc.d
+  /usr/share/X11/XErrorDB:
+    symlink: $SNAP/graphics/X11/XErrorDB
+  /usr/share/X11/locale:
+    symlink: $SNAP/graphics/X11/locale
+  /usr/share/X11/xkb:
+    bind: $SNAP/usr/share/X11/xkb
+
+plugs:
+  graphics-core22:
+    interface: content
+    target: $SNAP/graphics
+    default-provider: mesa-core22
+  # https://forum.snapcraft.io/t/how-to-use-the-system-gtk-theme-via-the-gtk-common-themes-snap/6235
+  gtk-3-themes:
+    interface: content
+    target: $SNAP/share/themes
+    default-provider: gtk-common-themes
+  icon-themes:
+    interface: content
+    target: $SNAP/share/icons
+    default-provider: gtk-common-themes
+  sound-themes:
+    interface: content
+    target: $SNAP/share/sounds
+    default-provider: gtk-common-themes
+
+parts:
+  daino-notes:
+    source: .
+    source-type: git
+    plugin: cmake
+    cmake-generator: Ninja
+    cmake-parameters:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_INSTALL_PREFIX=/usr
+      - -DGIT_REVISION=ON
+      - -DPRO_VERSION=OFF # Note: You may want to remove this option if you're building the snap yourself.
+      - -DUPDATE_CHECKER=OFF
+      - -DUSE_QT_VERSION=6
+    parse-info:
+      - usr/share/metainfo/io.github.nuttyartist.daino-notes.metainfo.xml
+    build-packages:
+      - libgl-dev
+      - libqt6opengl6-dev
+      - qt6-base-private-dev
+      - qt6-declarative-dev
+    stage-packages:
+      - libqt6network6
+      - libqt6sql6-sqlite
+      - libqt6widgets6
+      - libxcursor1 # For some reason this isn't present in core22, but Qt dlopen()'s it to set up the mouse cursor theme, so we have to include it.
+      - qml6-module-qtqml-workerscript
+      - qml6-module-qtquick-controls
+      - qml6-module-qtquick-layouts
+      - qml6-module-qtquick-particles
+      - qml6-module-qtquick-templates
+      - qml6-module-qtquick-window
+      - qt6-qpa-plugins
+    override-prime: |
+      craftctl default
+      if [ -d "${SNAPCRAFT_PART_SRC}/.git" ]
+      then
+        craftctl set version="$(grep -oPm1 '\bAPP_VERSION +\K[^)]+' "${SNAPCRAFT_PART_SRC}/CMakeLists.txt")+g$(git -C "${SNAPCRAFT_PART_SRC}" rev-parse --short HEAD)"
+      fi
+
+  graphics-core22:
+    after:
+      - daino-notes
+    source: https://github.com/MirServer/graphics-core22.git
+    plugin: dump
+    override-prime: |
+      craftctl default
+      ${CRAFT_PART_SRC}/bin/graphics-core22-cleanup mesa-core22 nvidia-core22
+    prime:
+      - bin/graphics-core22-wrapper

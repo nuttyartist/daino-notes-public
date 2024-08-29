@@ -1,0 +1,6 @@
+[submodule "python/pybind11"]
+	path = python/pybind11
+	url = https://github.com/pybind/pybind11
+[submodule "tests/md4c"]
+	path = tests/md4c
+	url = https://github.com/tim-gromeyer/MarkdownEdit_md4c

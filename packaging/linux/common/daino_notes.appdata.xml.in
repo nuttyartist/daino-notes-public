@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2022 @APP_AUTHOR@ -->
+<component type="desktop-application">
+    <id>@APP_ID@</id>
+    <launchable type="desktop-id">@APP_ID@.desktop</launchable>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>MPL-2.0</project_license>
+    <name>@PROJECT_NAME@</name>
+    <developer_name>@APP_AUTHOR@</developer_name>
+    <update_contact>@APP_AUTHOR_EMAIL@</update_contact>
+    <summary>@PROJECT_DESCRIPTION@</summary>
+    <url type="homepage">@APP_WEBSITE@</url>
+    <url type="bugtracker">@APP_REPOSITORY@/issues</url>
+    <description>
+        <p>Write beautifully. Effortlessly. Daino Notes is a fast and elegant place for all your thoughts. Written in Qt C++ and QML.</p>
+        <p>Features overview:</p>
+        <ul>
+            <li>Native app (written in Qt C++ and QML)</li>
+            <li>Beautiful and effortless image support</li>
+            <li>Kanban support</li>
+            <li>Beautiful Drop Cap</li>
+            <li>Drag and drop anything, anywhere (reorder lists, paragraphs, change image location, etc)</li>
+            <li>Fast. The fastest block editor out there according to our test</li>
+            <li>All notes are simple plain text strings stored in a local SQLite database formatted in Markdown (with minor syntax for advanced blocks like Kanban and images)</li>
+            <li>Markdown support</li>
+            <li>Completely private - tracks nothing</li>
+            <li>Cross-platform (Linux, macOS, Windows)</li>
+            <li>Beautiful interface with attention to detail</li>
+            <li>Folders and Tags. Organize your ideas hierarchically using nested folders and universally using tags</li>
+            <li>Different themes. Switch between Light, Dark, and Sepia</li>
+            <li>Always runs in the background: Use the hotkey <code>Super</code> + <code>Shift</code> + <code>N</code> to summon Notes</li>
+            <li>And much more to come</li>
+        </ul>
+    </description>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://www.rubymamistvalove.com/screenshots/linux/this_is_a_line_linux.png</image>
+            <caption>Overview</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://www.rubymamistvalove.com/screenshots/linux/kanban.png</image>
+            <caption>Kanban Board</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://www.rubymamistvalove.com/screenshots/linux/tasks.png</image>
+            <caption>Markdown Tasks</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://www.rubymamistvalove.com/screenshots/linux/theme.png</image>
+            <caption>Dark Theme</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://www.rubymamistvalove.com/screenshots/linux/sepia.png</image>
+            <caption>Sepia theme</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://www.rubymamistvalove.com/screenshots/linux/tags.png</image>
+            <caption>Folders and Tags</caption>
+        </screenshot>
+    </screenshots>
+    <content_rating type="oars-1.1" />
+    <releases>
+        <release date="2024-06-29" version="0.9.9">
+            <description>
+                <p>A new release is here with some bug fixes and improvements:</p>
+                <p>Bug fixes and improvements:</p>
+                <ul>
+                    <li>Resolved improper positioning of advanced blocks in RTL language settings</li>
+                    <li>Corrected the excessive left margin for lists in Kanban Tasks</li>
+                    <li>Enhanced RTL language handling on startup</li>
+                    <li>Resolved an issue where Markdown formatting wasn't properly displayed for the initial lines of text in the notes list view</li>
+                    <li>Addressed various minor issues</li>
+                </ul>
+            </description>
+        </release>
+        <release date="2024-06-25" version="0.9.8">
+            <description>
+                <p>A new release is here with some bug fixes and improvements:</p>
+                <p>New features:</p>
+                <ul>
+                    <li>Support for right-to-left languages such as Arabic, Hebrew, Persian, etc</li>
+                    <li>Pasting links from recognized domains now automatically converts them into clickable hyperlinks</li>
+                    <li>Added the ability to duplicate a Kanban task by right-clicking on it</li>
+                </ul>
+                <p>Bug fixes and improvements:</p>
+                <ul>
+                    <li>Resolved a bug that caused Kanban columns to become stuck when dragged upward or downward</li>
+                </ul>
+            </description>
+        </release>
+        <release date="2024-06-18" version="0.9.7">
+            <description>
+                <p>A new release is here with some bug fixes and improvements:</p>
+                <p>New features:</p>
+                <ul>
+                    <li>You can now right-click on Kanban columns to easily paste new tasks</li>
+                </ul>
+                <p>Bug fixes and improvements:</p>
+                <ul>
+                    <li>Refined design that provides more breathing room between different UI elements, along with numerous subtle yet significant enhancements</li>
+                    <li>Resolved a persistent issue on Windows and Linux where dragging a Kanban card would inadvertently move the entire Kanban view</li>
+                    <li>Resolved an issue that prevented links from being set correctly</li>
+                    <li>Corrected an issue where right-clicking inside a Kanban did not trigger the expected context menu</li>
+                    <li>Addressed the stuttering animation problem that occurred while expanding or collapsing the folders/notes panes</li>
+                    <li>Optimized the rendering of advanced blocks like Kanban boards and images for smoother scrolling</li>
+                </ul>
+            </description>
+        </release>
+        <release date="2024-06-10" version="0.9.6">
+            <description>
+                <p>A new release is here with some new features, bug fixes and improvements:</p>
+                <ul>
+                    <li>Added the ability to drag blocks and external images into empty areas in the editor</li>
+                    <li>Improved stability and memory management, fixing several memory leaks</li>
+                    <li>Fixed an issue where "amp" was displayed instead of the ampersand character the notes list</li>
+                    <li>Fixed an issue where the Kanban task editor didn't close after finishing editing</li>
+                </ul>
+            </description>
+        </release>
+        <release date="2024-05-29" version="0.9.5">
+            <description>
+                <p>A new release is here with some bug fixes and improvements:</p>
+                <ul>
+                    <li>Enhanced Heading Placeholders: Added proper placeholders for different heading levels</li>
+                    <li>Resolved an issue where the app mistakenly recognized the Ctrl and Shift keys as still pressed after closing the types menu via shortcut</li>
+                    <li>Fixed a bug preventing searches in the types menu when accessed through text selection</li>
+                    <li>Redesigned dialogs for a more cohesive experience on Windows and Linux</li>
+                    <li>Corrected issues with block dragging to ensure accurate placement and sizing</li>
+                    <li>Fixed a crash that occurred when attempting to convert a block when none was selected</li>
+                    <li>And many other small improvements and bug fixes for a smoother user experience</li>
+                </ul>
+            </description>
+        </release>
+        <release date="2024-05-21" version="0.9.4">
+            <description>
+                <p>A new release is here with some new features, bug fixes and improvements:</p>
+                <p>New features:</p>
+                <ul>
+                    <li>Hover over the tasks' pie chart, either in the Kanban view or the app's top bar, to view the total, completed, and remaining tasks</li>
+                    <li>Press '/' on an empty line to open the types menu and quickly insert a block of your chosen type</li>
+                </ul>
+                <p>Bug fixes and improvements:</p>
+                <ul>
+                    <li>Use the shortcut Ctrl + Shift + C to open the types menu</li>
+                    <li>Fixed a long-standing issue where an empty line of text had an incorrect height compared to other lines</li>
+                    <li>Resolved a bug that prevented ordered lists from being created or converted correctly</li>
+                    <li>Fixed an issue where scrolling on Windows and Linux was too frictionless</li>
+                    <li>Added the ability to drag a Kanban column by its title</li>
+                    <li>Use the Ctrl + W shortcut to hide the app on macOS</li>
+                    <li>Fixed an issue where to-do text was not vertically centered with the checkbox</li>
+                </ul>
+            </description>
+        </release>
+        <release date="2024-05-17" version="0.9.3">
+            <description>
+                <p>A new release is here with some bug fixes and improvements:</p>
+                <ul>
+                    <li>Much improved scrolling experience overall, also fixes issues with the scrollbar changing size frequently</li>
+                    <li>Fixed issue on Windows and Linux where there is a long delay to press Kanban tasks</li>
+                    <li>Highlight kanban tasks when hovered to let users know they can drag them</li>
+                    <li>Fixed issue where converting empty text to Drop Cap resulted in the wrong cursor position</li>
+                    <li>Fixed some wrong links in the About window</li>
+                </ul>
+            </description>
+        </release>
+        <release date="2024-05-15" version="0.9.2">
+            <description>
+                <p>A new release is here with some new features, bug fixes and improvements:</p>
+                <p>New features:</p>
+                <ul>
+                    <li>Automatic ordered list support</li>
+                </ul>
+                <p>Bug fixes and improvements:</p>
+                <ul>
+                    <li>Much smoother scrolling on Windows and Linux</li>
+                    <li>Fixed issue with closing/expanding panes via horizontal swipe</li>
+                    <li>You can now delete an image by pressing the delete/backspace key</li>
+                    <li>Fixed an issue with the cursor not appearing at the right location after pressing return</li>
+                    <li>Huge performance boost when handling very large notes</li>
+                    <li>Fixed an issue on Windows and Linux where the window didn't show the native title bar</li>
+                    <li>Fixed an issue when moving selected blocks up/down using keyboard shortcuts and the editor lost focus</li>
+                </ul>
+            </description>
+        </release>
+        <release date="2024-05-11" version="0.9.1">
+            <description>
+                <p>A new release is here with some bug fixes and improvements:</p>
+                <ul>
+                    <li>Fix DropCap getting too big when resizing</li>
+                    <li>Disable folders pane animation for now (some users reported jittery animation)</li>
+                </ul>
+            </description>
+        </release>
+        <release date="2023-05-01" version="0.9.0">
+            <description>
+                <p>Initial release.</p>
+            </description>
+        </release>
+    </releases>
+    <provides>
+        <binary>@PROJECT_NAME_LOWERCASE@</binary>
+    </provides>
+</component>

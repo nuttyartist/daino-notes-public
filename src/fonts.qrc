@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fonts/trykker/Trykker-Regular.ttf</file>
+        <file>fonts/fontawesome/fa-solid-900.ttf</file>
+        <file>fonts/material/material-symbols-outlined.ttf</file>
+        <file>fonts/fontawesome/fa-brands-400.ttf</file>
+        <file>fonts/fontawesome/fa-regular-400.ttf</file>
+        <file>fonts/ibarrareal/IbarraRealNova-Italic[wght].ttf</file>
+        <file>fonts/ibarrareal/IbarraRealNova[wght].ttf</file>
+        <file>fonts/inter/InterVariable-Italic.ttf</file>
+        <file>fonts/inter/InterVariable.ttf</file>
+        <file>fonts/inter/Inter.ttc</file>
+        <file>fonts/iamono/iAWriterMonoS-Bold.ttf</file>
+        <file>fonts/iamono/iAWriterMonoS-BoldItalic.ttf</file>
+        <file>fonts/iamono/iAWriterMonoS-Italic.ttf</file>
+        <file>fonts/iamono/iAWriterMonoS-Regular.ttf</file>
+        <file>fonts/iaduo/iAWriterDuoS-Bold.ttf</file>
+        <file>fonts/iaduo/iAWriterDuoS-BoldItalic.ttf</file>
+        <file>fonts/iaduo/iAWriterDuoS-Italic.ttf</file>
+        <file>fonts/iaduo/iAWriterDuoS-Regular.ttf</file>
+        <file>fonts/iaquattro/iAWriterQuattroS-Bold.ttf</file>
+        <file>fonts/iaquattro/iAWriterQuattroS-BoldItalic.ttf</file>
+        <file>fonts/iaquattro/iAWriterQuattroS-Italic.ttf</file>
+        <file>fonts/iaquattro/iAWriterQuattroS-Regular.ttf</file>
+    </qresource>
+</RCC>

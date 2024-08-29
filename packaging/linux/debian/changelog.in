@@ -1,0 +1,11 @@
+@PROJECT_NAME_LOWERCASE@ (@PROJECT_VERSION@) UNRELEASED; urgency=low
+
+  * No changelog is available yet
+
+ -- @APP_AUTHOR@ <@APP_AUTHOR_EMAIL@>  @DATE_NOW_UTC@
+
+@PROJECT_NAME_LOWERCASE@ (0.9.0) stable; urgency=low
+
+  * Initial release
+
+ -- @APP_AUTHOR@ <@APP_AUTHOR_EMAIL@>  Sun, 1 May 2024 14:43:39 +0100

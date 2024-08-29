@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/folder.png</file>
+        <file>images/notepad.icns</file>
+        <file>images/notepad.ico</file>
+        <file>images/notes.rc</file>
+        <file>images/notes_icon.ico</file>
+        <file>images/notes_icon.icns</file>
+        <file>images/notes_system_tray_icon_mac.png</file>
+        <file>images/notes_icon.png</file>
+        <file>images/notes_system_tray_icon.png</file>
+        <file>images/Lady_with_an_Ermine.jpeg</file>
+        <file>images/The_School_of_Athens.jpeg</file>
+        <file>images/feature_distraction_free_dark.jpg</file>
+        <file>images/feature_distraction_free_light.jpg</file>
+        <file>images/feature_dropcap_dark.jpg</file>
+        <file>images/feature_dropcap_light.jpg</file>
+        <file>images/feature_image_dark.jpg</file>
+        <file>images/feature_kanban_light.jpg</file>
+        <file>images/feature_kanban_dark.jpg</file>
+        <file>images/feature_image_light.jpg</file>
+    </qresource>
+</RCC>

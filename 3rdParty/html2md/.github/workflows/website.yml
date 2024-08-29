@@ -1,0 +1,31 @@
+name: Update website
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  website:
+    name: Build website and deploy to gh pages
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Add version to Doxyfile
+      run: |
+        echo "PROJECT_NUMBER = ${{ github.ref_name }}" >> docs/Doxyfile
+
+    - name: Run Doxygen
+      uses: mattnotmitt/doxygen-action@edge
+      with:
+        doxyfile-path: 'docs/Doxyfile'
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./doc
+

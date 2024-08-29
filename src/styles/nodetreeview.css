@@ -1,0 +1,24 @@
+QTreeView {
+  border-style: none;
+
+  selection-color: white;
+}
+
+QTreeView.light {
+  background-color: rgb(237, 237, 237);
+  selection-background-color: rgb(237, 237, 237);
+}
+
+QTreeView.dark {
+  background-color: rgb(51,51,51);
+  selection-background-color: rgb(51,51,51);
+}
+
+QTreeView.sepia {
+  background-color: rgb(237, 237, 237);
+  selection-background-color: rgb(237, 237, 237);
+}
+
+QTreeView::branch {
+  border-image: url(none.png);
+}

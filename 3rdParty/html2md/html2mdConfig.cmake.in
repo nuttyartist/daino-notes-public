@@ -1,0 +1,7 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/@PROJECT_NAME@Targets.cmake")
+
+set(html2md_FOUND TRUE)
+set(HTML2MD_FOUND TRUE)
+

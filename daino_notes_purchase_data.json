@@ -1,0 +1,7 @@
+{
+  "purchase_pro_url": "https://www.get-notes.com/pricing",
+  "purchaseApiBase": "https://www.daino.io/api/daino_notes",
+  "activateLicenseEndpoint": "/activateLicense",
+  "validateLicenseEndpoint": "/validateLicense",
+  "deactivateLicenseEndpoint": "/none"
+}

@@ -1,0 +1,13 @@
+*.user*
+build-linux/
+build-windows/
+build-wasm/
+doc/
+tests/error.log
+conan/
+build/
+dist/
+pyhtml2md.egg-info/
+*.whl
+wheelhouse/
+tests/__pycache__/

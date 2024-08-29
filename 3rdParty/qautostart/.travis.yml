@@ -1,0 +1,33 @@
+language: cpp
+compiler: gcc
+sudo: require
+dist: trusty
+
+os:
+  - linux
+  - osx
+
+compiler:
+  - gcc
+  - clang
+
+before_install:
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo add-apt-repository ppa:beineri/opt-qt593-trusty -y; fi;
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get -qy update; fi;
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew update; fi;
+
+install:
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get -qy install qt5-qmake qtbase5-dev; fi;
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install qt5; fi;
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew link --force qt5; fi;
+  
+
+
+script:
+  - cd test
+  - qmake
+  - make
+  
+after_success:
+  - ./test
+  

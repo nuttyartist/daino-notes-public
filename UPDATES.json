@@ -1,0 +1,22 @@
+{
+  "updates": {
+    "windows": {
+      "open-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v0.9.0/DainoNotesSetup_0.9.0.exe",
+      "latest-version": "3.0.0",
+      "download-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v0.9.0/DainoNotesSetup_0.9.0.exe",
+      "changelog": ""
+    },
+    "osx": {
+      "open-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v0.9.0/DainoNotesSetup_0.0.9.0.dmg",
+      "latest-version": "3.0.0",
+      "download-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v0.9.0/DainoNotesSetup_0.0.9.0.dmg",
+      "changelog": ""
+    },
+    "linux": {
+      "open-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v0.9.0/DainoNotesSetup_0_0.9.0-Qt6.7.0-x86_64.AppImage",
+      "latest-version": "3.0.0",
+      "download-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v0.9.0/DainoNotesSetup_0_0.9.0-Qt6.7.0-x86_64.AppImage",
+      "changelog": ""
+    }
+  }
+}

@@ -1,0 +1,5 @@
+include python/README.md COPYING python/pybind11/LICENSE python/pybind11/CMakeLists.txt CMakeLists.txt python/bindings.cpp
+graft python/pybind11/include
+graft python/pybind11/tools
+graft src
+graft include

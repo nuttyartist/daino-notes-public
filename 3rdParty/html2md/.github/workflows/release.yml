@@ -1,0 +1,81 @@
+name: Create release and update assets
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and upload release assetes
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-20.04
+            files: |
+              build/packages/html2md*.deb
+              build/packages/html2md*.tar.gz
+          - os: ubuntu-22.04
+            files: |
+              build/packages/html2md*.deb
+          - os: windows-latest
+            files: |
+              build/packages/html2md*.zip
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Build and package
+      run: |
+        mkdir build && cd build
+        cmake -DBUILD_TEST=OFF -DBUILD_DOC=OFF -DCMAKE_BUILD_TYPE=Release ..
+        cmake --build . --config Release
+        cmake --build . --config Release --target package
+      shell: bash
+
+    - name: Upload package
+      uses: actions/upload-artifact@v3
+      with:
+        path: ${{ matrix.files }}
+
+  publish:
+    name: Create release and upload files
+    runs-on: ubuntu-22.04
+    needs: build
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Download release asstets
+      uses: actions/download-artifact@v3
+      with:
+        path: packages
+
+    - name: Find changes and release assets
+      id: files
+      run: |
+        PREVIOS="$(git tag --sort=creatordate | tail -n 2 | head -n1)"
+        wget https://raw.githubusercontent.com/tim-gromeyer/html2md/$PREVIOS/CHANGELOG.md -O OLD.md
+        echo "CHANGES<<EOF" >> $GITHUB_ENV
+        echo "$(grep -Fvxf OLD.md CHANGELOG.md | tail -n +2)" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+
+        echo "FILES<<EOF" >> $GITHUB_ENV
+        find packages/ -name "*" -type f >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        generate_release_notes: true
+        body: ${{ env.CHANGES }}
+        files: ${{ env.FILES }}
