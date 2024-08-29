@@ -18,7 +18,7 @@ This is primarily why this repository exists. Another reason is to track bug rep
 I wanted to create a note-taking app with these three points in mind:
 
 1. Its underlying data is a simple plain text (with Markdown syntax).
-2. It has a WYSIWYG block editor (that can render complex objects like Kanban, Images, etc).
+2. It has a WYSIWYG block editor (that can render complex objects like Task Board, Images, etc).
 3. It is simple and familiar to use even for the most non-technical users.
 
 (More details in a future blog post on [my blog](https://rubymamistvalove.com))
@@ -27,11 +27,11 @@ I wanted to create a note-taking app with these three points in mind:
 
 - Native app (written in Qt C++ and QML).
 - Beautiful and effortless image support.
-- Kanban support.
+- Task Board support.
 - Beautiful Drop Cap.
 - Drag and drop anything, anywhere (reorder lists, paragraphs, change image location, etc).
 - Fast. The fastest block editor out there [according to our test](https://www.get-notes.com).
-- All notes are simple plain text strings stored in a local SQLite database formatted in Markdown (with minor syntax for advanced blocks like Kanban and images).
+- All notes are simple plain text strings stored in a local SQLite database formatted in Markdown (with minor syntax for advanced blocks like Task Board and images).
 - Markdown support.
 - Completely private - tracks nothing.
 - Cross-platform (Linux, macOS, Windows).
