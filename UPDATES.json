@@ -1,22 +1,22 @@
 {
   "updates": {
     "windows": {
-      "open-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v3.1.1/DainoNotesSetup_3.1.1.exe",
-      "latest-version": "3.1.1",
-      "download-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v3.1.1/DainoNotesSetup_3.1.1.exe",
-      "changelog": "<style>div{color:#000}kbd{color:#24292f;background-color:#f6f8fa}ul{margin-left:-2em}</style><div><p>A new release is here with some major bug fixes and improvements.</p><p>Bug fixes and improvements:</p><ul><li>Faster Note Loading: Improved the speed of loading notes, now 35% faster than the previous version.</li><li>Resolved a memory leak issue.</li></ul><p>Join our <span><a href='https://discord.com/invite/D3KeTqeq6A'>Discord</a></span> for discussions, and feel free to <span><a href='mailto:contact@get-notes.com'>email us</a></span>. We love hearing from our users.</p><p>We have a lot more to show, so stay tuned.</p></div><br>"
+      "open-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v3.1.2/DainoNotesSetup_3.1.2.exe",
+      "latest-version": "3.1.2",
+      "download-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v3.1.2/DainoNotesSetup_3.1.2.exe",
+      "changelog": "<style>div{color:#000}kbd{color:#24292f;background-color:#f6f8fa}ul{margin-left:-2em}</style><div><p>A new release is here with some new features, bug fixes and improvements.</p><p>New features:</p><ul><li>Introduced a new, beautiful frameless window design for Windows users.</li></ul><p>Bug fixes and improvements:</p><ul><li>Resolved an issue that caused 100% CPU utilization when hovering over folders and tags.</li><li>Corrected the minimum width setting for the window.</li></ul><p>Join our <span><a href='https://discord.com/invite/D3KeTqeq6A'>Discord</a></span> for discussions, and feel free to <span><a href='mailto:contact@get-notes.com'>email us</a></span>. We love hearing from our users.</p><p>We have a lot more to show, so stay tuned.</p></div><br>"
     },
     "osx": {
-      "open-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v3.1.1/DainoNotes.3.1.1.dmg",
-      "latest-version": "3.1.1",
-      "download-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v3.1.1/DainoNotes.3.1.1.dmg",
-      "changelog": "<style>div{color:#000}kbd{color:#24292f;background-color:#f6f8fa}ul{margin-left:-2em}</style><div><p>A new release is here with some major bug fixes and improvements.</p><p>Bug fixes and improvements:</p><ul><li>Faster Note Loading: Improved the speed of loading notes, now 35% faster than the previous version.</li><li>Resolved a memory leak issue.</li></ul><p>Join our <span><a href='https://discord.com/invite/D3KeTqeq6A'>Discord</a></span> for discussions, and feel free to <span><a href='mailto:contact@get-notes.com'>email us</a></span>. We love hearing from our users.</p><p>We have a lot more to show, so stay tuned.</p></div><br>"
+      "open-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v3.1.2/DainoNotes.3.1.2.dmg",
+      "latest-version": "3.1.2",
+      "download-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v3.1.2/DainoNotes.3.1.2.dmg",
+      "changelog": "<style>div{color:#000}kbd{color:#24292f;background-color:#f6f8fa}ul{margin-left:-2em}</style><div><p>A new release is here with some new features, bug fixes and improvements.</p><p>New features:</p><ul><li>Introduced a new, beautiful frameless window design for Windows users.</li></ul><p>Bug fixes and improvements:</p><ul><li>Resolved an issue that caused 100% CPU utilization when hovering over folders and tags.</li><li>Corrected the minimum width setting for the window.</li></ul><p>Join our <span><a href='https://discord.com/invite/D3KeTqeq6A'>Discord</a></span> for discussions, and feel free to <span><a href='mailto:contact@get-notes.com'>email us</a></span>. We love hearing from our users.</p><p>We have a lot more to show, so stay tuned.</p></div><br>"
     },
     "linux": {
-      "open-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v3.1.1/daino_notes_3.1.1-Qt6.7.2-x86_64.AppImage",
-      "latest-version": "3.1.1",
-      "download-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v3.1.1/daino_notes_3.1.1-Qt6.7.2-x86_64.AppImage",
-      "changelog": "<style>div{color:#000}kbd{color:#24292f;background-color:#f6f8fa}ul{margin-left:-2em}</style><div><p>A new release is here with some major bug fixes and improvements.</p><p>Bug fixes and improvements:</p><ul><li>Faster Note Loading: Improved the speed of loading notes, now 35% faster than the previous version.</li><li>Resolved a memory leak issue.</li></ul><p>Join our <span><a href='https://discord.com/invite/D3KeTqeq6A'>Discord</a></span> for discussions, and feel free to <span><a href='mailto:contact@get-notes.com'>email us</a></span>. We love hearing from our users.</p><p>We have a lot more to show, so stay tuned.</p></div><br>"
+      "open-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v3.1.2/daino_notes_3.1.2-Qt6.7.3-x86_64.AppImage",
+      "latest-version": "3.1.2",
+      "download-url": "https://github.com/nuttyartist/daino-notes-public/releases/download/v3.1.2/daino_notes_3.1.2-Qt6.7.3-x86_64.AppImage",
+      "changelog": "<style>div{color:#000}kbd{color:#24292f;background-color:#f6f8fa}ul{margin-left:-2em}</style><div><p>A new release is here with some new features, bug fixes and improvements.</p><p>New features:</p><ul><li>Introduced a new, beautiful frameless window design for Windows users.</li></ul><p>Bug fixes and improvements:</p><ul><li>Resolved an issue that caused 100% CPU utilization when hovering over folders and tags.</li><li>Corrected the minimum width setting for the window.</li></ul><p>Join our <span><a href='https://discord.com/invite/D3KeTqeq6A'>Discord</a></span> for discussions, and feel free to <span><a href='mailto:contact@get-notes.com'>email us</a></span>. We love hearing from our users.</p><p>We have a lot more to show, so stay tuned.</p></div><br>"
     }
   }
 }
