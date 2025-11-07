@@ -2462,12 +2462,26 @@ void MainWindow::maximizeWindow()
     if (isMaximized()) {
         setWindowState(windowState() & ~Qt::WindowMaximized);
         setWindowState(windowState() & ~Qt::WindowFullScreen);
-    } else if (isFullScreen()) {
-        setWindowState((windowState() | Qt::WindowMaximized) & ~Qt::WindowFullScreen);
-        setGeometry(qApp->primaryScreen()->availableGeometry());
     } else {
-        setWindowState(windowState() | Qt::WindowMaximized);
-        setGeometry(qApp->primaryScreen()->availableGeometry());
+        // Get the screen that the window is currently on
+        QScreen *currentScreen = nullptr;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+        currentScreen = screen();
+#else
+        currentScreen = QApplication::screenAt(pos());
+#endif
+        // Fallback to primary screen if current screen cannot be determined
+        if (!currentScreen) {
+            currentScreen = qApp->primaryScreen();
+        }
+
+        if (isFullScreen()) {
+            setWindowState((windowState() | Qt::WindowMaximized) & ~Qt::WindowFullScreen);
+            setGeometry(currentScreen->availableGeometry());
+        } else {
+            setWindowState(windowState() | Qt::WindowMaximized);
+            setGeometry(currentScreen->availableGeometry());
+        }
     }
 #endif
 }
